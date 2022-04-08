@@ -1,0 +1,17 @@
+<h3>¿Alcohol o gasolina?</h3>
+<p id="resultado"></p>
+<p id="resultadoDos"></p>
+<script>
+    let litrosGasolina=parseInt(prompt('Inserte litros de gasolina: '));
+    let kmRecorridos=parseInt(prompt('Inserte Km recorridos: '));
+    let litrosAlcohol=parseInt(prompt('Inserte litros de alcohol: '));
+    let kmRecorridos2=parseInt(prompt('Inserte Km recorridos: '));
+     
+     let resultado = document.getElementById('resultado');
+     let resultadoDos = document.getElementById('resultadoDos');
+
+     let resultado1=kmRecorridos/litrosGasolina;
+     let resultado2=kmRecorridos2/litrosAlcohol;
+     resultado.innerHTML = `<b>El resultado con gasolina es: ${resultado1}</b>`;
+     resultadoDos.innerHTML = `<b>El resultado con alcohol es: ${resultado2}</b>`;
+</script>
