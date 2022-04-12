@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Recetas de Armando</h1>
+<ul id="resultado"></ul>
+
+<script>
+
+    let ingredientes = [];
+    let cantidad = parseInt(prompt("¿Cuántos ingredientes vas a añadir?"));
+    let resultado = document.getElementById('resultado');
+    
+    for (let i = 0; i < cantidad; i++) {
+        let ingrediente = prompt("Informe el ingrediente " + (i+1));
+         ingredientes.push(ingrediente);
+}
+
+for(let j=0;j<cantidad;j++){
+    const dataArr = new Set(ingredientes);
+        let result = [...dataArr];
+        if(result[j]!=undefined){
+            const texto = `${result[j]} <br/>`;
+                  const espacio = document.createElement('li');
+                  espacio.innerHTML=`${texto}`;
+                  resultado.appendChild(espacio);
+        }
+}
+
+</script>
+</body>
+</html>
