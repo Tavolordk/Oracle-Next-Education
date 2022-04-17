@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Graficas</title>
+</head>
+<body>
+    <div class="row mt-5">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="d-flex justify-content-center">
+         <canvas width="600" height="400"></canvas>
+        </div>
+        </div>
+    </div>
+
+<script>
+
+    function dibujarBarra(x, y,base,altura,colores, texto) {
+
+//Aquí necesitamos escribir el texto y dibujar los rectángulos
+let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle=colores;
+        pincel.fillRect(x,y, base, altura);
+        pincel.strokeStyle="black";
+        pincel.strokeRect(x,y, base, altura);
+        pincel.font="15px Georgia";
+        pincel.fillStyle="black";
+        pincel.fillText(texto, x, y); 
+}
+    //Aquí viene el texto faltante
+    let serie2009 = [6, 47, 41, 3, 3];
+    let serie2019 = [81, 9, 3, 3, 4];
+
+    let colores=["purple","green","yellow","red","gray"];
+    let acumuladorUno=50; 
+    let acumuladorDos=150;
+for(let i=0;i<5;i++){
+    acumuladorUno=acumuladorUno+serie2009[i];
+    acumuladorDos=acumuladorDos+serie2019[i];
+
+    console.log(acumuladorUno);
+    console.log(acumuladorDos);
+    console.log(colores[i]);
+    dibujarBarra(acumuladorUno,serie2009[i],acumuladorUno,serie2009[i],colores[i],"2009");
+    dibujarBarra(acumuladorDos,serie2019[i],acumuladorDos,serie2019[i], colores[i],"2019");
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

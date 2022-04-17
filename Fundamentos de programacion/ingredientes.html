@@ -20,16 +20,13 @@
         let ingrediente = prompt("Informe el ingrediente " + (i+1));
          ingredientes.push(ingrediente);
 }
-
-for(let j=0;j<cantidad;j++){
-    const dataArr = new Set(ingredientes);
+const dataArr = new Set(ingredientes);
         let result = [...dataArr];
-        if(result[j]!=undefined){
+for(let j=0;j<result.length;j++){
             const texto = `${result[j]} <br/>`;
                   const espacio = document.createElement('li');
                   espacio.innerHTML=`${texto}`;
                   resultado.appendChild(espacio);
-        }
 }
 
 </script>
